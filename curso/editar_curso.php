@@ -18,5 +18,5 @@
         $con->query($sql_update);
     }
     $con->close();
-    //header("location: ./cursos_tela.php");
+    header("location: ./cursos_tela.php");
 ?>

@@ -9,14 +9,14 @@
     $editar = $_REQUEST["editar"];
     //tratar campos vazios
     if ($editar == 0){
-        $sql_ins = "INSERT INTO CURSO VALUES (".$_REQUEST["codigo"].",\"".$_REQUEST["nome"]."\",\"".$_REQUEST["instituicao"]."\",\"".$_REQUEST["forma"]."\",\"".$_REQUEST["sigla"]."\")";
+        $sql_ins = "INSERT INTO INSTITUICAO VALUES (\"".$_REQUEST["sigla"]."\",\"".$_REQUEST["nome"]."\",\"".$_REQUEST["cidade"]."\",\"".$_REQUEST["uf"]."\",\"".$_REQUEST["pais"]."\");";
         echo $sql_ins;
         $con->query($sql_ins);
     } else {
-        $sql_update = "UPDATE CURSO SET Nome=\"".$_REQUEST["nome"]."\",instituicao=\"".$_REQUEST["instituicao"]."\",forma=\"".$_REQUEST["forma"]."\",sigla=\"".$_REQUEST["sigla"]."\" WHERE codigo=".$_REQUEST["codigo"].";";
+        $sql_update = "UPDATE INSTITUICAO SET Nome=\"".$_REQUEST["nome"]."\",`Cidade`=\"".$_REQUEST["cidade"]."\",`UF`=\"".$_REQUEST["uf"]."\",`Pais`=\"".$_REQUEST["pais"]."\" WHERE sigla=\"".$_REQUEST["sigla"]."\";";
         echo $sql_update;
         $con->query($sql_update);
     }
     $con->close();
-    //header("location: ./cursos_tela.php");
+    //header("location: ./instituicoes_tela.php");
 ?>

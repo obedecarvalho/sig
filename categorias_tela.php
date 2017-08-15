@@ -12,7 +12,7 @@
         <div class="principal">
             <center>
                 <div name="" class="secundaria">
-                    <h2> Categorias</h2>
+                    <h2>SIG</h2>
                         <?php
                             include("./session.php");
                         ?>
