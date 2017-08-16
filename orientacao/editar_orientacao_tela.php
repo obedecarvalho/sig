@@ -27,12 +27,29 @@
 
                 if ($codigo == -1){
                     echo "Tema <input type=\"text\" name=\"tema\"><br>";
-                    echo "Tipo <input type=\"text\" name=\"tipo\"><br>";
+                    //echo "Tipo <input type=\"text\" name=\"tipo\"><br>";
+                    //'TCC','TCC-EST','EST','MONITORIA','IC','TCC-POS'
+                    echo "Tipo <select name=tipo>";
+                        echo "<option value=\"TCC\">TCC</option>";
+                        echo "<option value=\"TCC-EST\">TCC-EST</option>";
+                        echo "<option value=\"EST\">EST</option>";
+                        echo "<option value=\"MONITORIA\">MONITORIA</option>";
+                        echo "<option value=\"IC\">IC</option>";
+                        echo "<option value=\"TCC-POS\">TCC-POS</option>";
+                    echo "</select><br>";
+                    
+                    //
                     echo "Aluno <input type=\"text\" name=\"aluno\"><br>";
                     echo "Professor <input type=\"text\" name=\"professor\"><br>";
                     echo "Inicio <input type=\"text\" name=\"inicio\"><br>";
                     echo "Fim <input type=\"text\" name=\"fim\"><br>";
-                    echo "Cancelado <input type=\"text\" name=\"cancelado\"><br>";
+                    //echo "Cancelado <input type=\"text\" name=\"cancelado\"><br>";
+                    //
+                    echo "Cancelado <select name=cancelado>";
+                        echo "<option value=\"S\">SIM</option>";
+                        echo "<option value=\"NULL\"></option>";
+                    echo "</select><br>";
+                    //
                     echo "ID <input type=\"text\" name=\"id\"><br>";
                     echo "<input type=\"hidden\" value=\"0\" name=\"editar\">";
                     
@@ -43,7 +60,16 @@
                     if ($res->num_rows != 0){
                             $cat = $res->fetch_assoc();
                             echo "Tema <input type=\"text\" name=\"tema\" value=\"".$cat["tema"]."\"><br>";
-                            echo "Tipo <input type=\"text\" name=\"tipo\" value=\"".$cat["tipo"]."\"><br>";
+                            //echo "Tipo <input type=\"text\" name=\"tipo\" value=\"".$cat["tipo"]."\"><br>";
+                            echo "Tipo <select name=tipo>";
+                                echo "<option value=\"TCC\">TCC</option>";
+                                echo "<option value=\"TCC-EST\">TCC-EST</option>";
+                                echo "<option value=\"EST\">EST</option>";
+                                echo "<option value=\"MONITORIA\">MONITORIA</option>";
+                                echo "<option value=\"IC\">IC</option>";
+                                echo "<option value=\"TCC-POS\">TCC-POS</option>";
+                            echo "</select><br>";
+                            //
                             echo "Aluno <input type=\"text\" name=\"aluno\" value=\"".$cat["aluno"]."\"><br>";
                             echo "Professor <input type=\"text\" name=\"professor\" value=\"".$cat["professor"]."\"><br>";
                             echo "Inicio <input type=\"text\" name=\"inicio\" value=\"".$cat["inicio"]."\"><br>";
